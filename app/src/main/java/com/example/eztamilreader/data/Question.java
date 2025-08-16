@@ -1,15 +1,29 @@
 package com.example.eztamilreader.data;
 
-import java.util.List;
-
 public class Question {
-    public String id;
-    public String tamilQuestion;   // e.g., "‘வழி’ என்பதன் அர்த்தம் என்ன?"
-    public String englishQuestion; // e.g., "What is the meaning of 'வழி'?"
-    public List<String> optionsTamil;   // ["பாதை", "மலர்", "வீடு"]
-    public List<String> optionsEnglish; // ["Path", "Flower", "House"] (optional)
-    public int correctIndex;       // 0-based
+    private String tamilQ;
+    private String englishQ;
+    private String[] options;
+    private int correctIndex;
 
-    // Empty constructor for Gson
-    public Question() {}
+    // Full constructor
+    public Question(String tamilQ, String englishQ, String[] options, int correctIndex) {
+        this.tamilQ = tamilQ;
+        this.englishQ = englishQ;
+        this.options = options;
+        this.correctIndex = correctIndex;
+    }
+
+    // ✅ Simple constructor (for direct questions without options)
+    public Question(String tamilQ, String englishQ) {
+        this.tamilQ = tamilQ;
+        this.englishQ = englishQ;
+        this.options = new String[]{}; // no options
+        this.correctIndex = -1;        // no correct answer
+    }
+
+    public String getTamilQ() { return tamilQ; }
+    public String getEnglishQ() { return englishQ; }
+    public String[] getOptions() { return options; }
+    public int getCorrectIndex() { return correctIndex; }
 }

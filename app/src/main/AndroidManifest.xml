@@ -17,7 +17,7 @@
         <activity android:name=".ui.HomeActivity" />
         <activity android:name=".ui.OnboardingActivity" />
 
-        <!-- Launcher Activity needs android:exported -->
+        <!-- Launcher Activity -->
         <activity
             android:name=".ui.SplashActivity"
             android:exported="true">

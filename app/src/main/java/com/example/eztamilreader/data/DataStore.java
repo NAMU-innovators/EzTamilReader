@@ -1,26 +1,32 @@
 package com.example.eztamilreader.data;
 
 import android.content.Context;
-import com.google.gson.Gson;
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
+
+import java.util.ArrayList;
+import java.util.List;
+
+// 👇 Add these imports so DataStore can see Worksheet & Question
+import com.example.eztamilreader.data.Worksheet;
+import com.example.eztamilreader.data.Question;
 
 public class DataStore {
-    private static Worksheet readWorksheet(Context ctx, String fileName) {
-        try {
-            BufferedReader br = new BufferedReader(
-                    new InputStreamReader(ctx.getAssets().open("questions/" + fileName)));
-            Worksheet ws = new Gson().fromJson(br, Worksheet.class);
-            br.close();
-            return ws;
-        } catch (Exception e) {
-            e.printStackTrace();
-            return null;
-        }
-    }
 
-    public static Worksheet getWorksheet(Context ctx, int number) {
-        String fname = "worksheet" + number + ".json";
-        return readWorksheet(ctx, fname);
+    // Example method to fetch a worksheet by ID
+    public static Worksheet getWorksheet(Context context, int id) {
+        Worksheet w = new Worksheet();
+        w.number = id;
+        w.title = "Sample Worksheet " + id;
+
+        // Fill some demo questions
+        w.direct = new ArrayList<>();
+        w.model = new ArrayList<>();
+
+        w.direct.add(new Question("What is அ ?", "Answer 1"));
+        w.direct.add(new Question("What is ஆ ?", "Answer 2"));
+
+        w.model.add(new Question("Match this அ", "Answer 3"));
+        w.model.add(new Question("Match this ஆ", "Answer 4"));
+
+        return w;
     }
 }

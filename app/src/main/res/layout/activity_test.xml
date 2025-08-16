@@ -1,58 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:padding="16dp"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/txtQuestion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Question will appear here"
+        android:textSize="18sp"
+        android:paddingBottom="16dp" />
+
+    <!-- RadioGroup for Multiple Choice Answers -->
+    <RadioGroup
+        android:id="@+id/rgOptions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="16dp">
+
+        <!-- RadioButtons will be added here dynamically or statically if options are fixed -->
+        <!-- Example (remove these if adding dynamically): -->
+        <!--
+        <RadioButton
+            android:id="@+id/rbOption1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Option 1" />
+        <RadioButton
+            android:id="@+id/rbOption2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Option 2" />
+        -->
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btnSubmit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Submit Answer"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="16dp"/>
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <TextView android:id="@+id/tvQNo"
-            android:text="Q 1/30"
-            android:textStyle="bold"
-            android:textSize="16sp"/>
-
-        <TextView android:id="@+id/tvTamilQ"
-            android:text="தமிழ் கேள்வி"
-            android:textSize="18sp"
-            android:layout_marginTop="8dp"/>
-
-        <TextView android:id="@+id/tvEnglishQ"
-            android:text="English question"
-            android:textSize="14sp"
-            android:layout_marginTop="4dp"/>
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
 
         <Button
-            android:id="@+id/btnPlayAudio"
-            android:text="@string/play_audio"
-            android:layout_marginTop="8dp"
+            android:id="@+id/btnPrev"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <RadioGroup
-            android:id="@+id/rgOptions"
-            android:layout_marginTop="12dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <RadioButton android:id="@+id/rb1" android:text="Option 1"/>
-            <RadioButton android:id="@+id/rb2" android:text="Option 2"/>
-            <RadioButton android:id="@+id/rb3" android:text="Option 3"/>
-        </RadioGroup>
+            android:layout_height="wrap_content"
+            android:text="Previous" />
 
         <Button
             android:id="@+id/btnNext"
-            android:text="@string/next"
-            android:layout_marginTop="12dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-
-        <Button
-            android:id="@+id/btnSubmit"
-            android:text="@string/submit"
-            android:layout_marginTop="8dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Next"
+            android:layout_marginStart="16dp" />
     </LinearLayout>
-</ScrollView>
+
+</LinearLayout>
