@@ -1,0 +1,56 @@
+{
+  "number": 1,
+  "title": "Basic Vowels (அ–ஔ)",
+  "direct": [
+    {
+      "id": "w1d1",
+      "tamilQuestion": "“அ” எந்த உயிரெழுத்து?",
+      "englishQuestion": "Which vowel is 'அ'?",
+      "optionsTamil": ["அ", "ஆ", "இ"],
+      "optionsEnglish": ["A (short)", "AA (long)", "I (short)"],
+      "correctIndex": 0
+    },
+    {
+      "id": "w1d2",
+      "tamilQuestion": "சரியான எழுத்தைத் தேர்வு செய்: __ மா",
+      "englishQuestion": "Choose the correct missing vowel",
+      "optionsTamil": ["அ", "ஆ", "ஓ"],
+      "optionsEnglish": ["A", "AA", "O"],
+      "correctIndex": 1
+    },
+    {
+      "id": "w1d3",
+      "tamilQuestion": "“இ” என்பதன் ஒலி எது?",
+      "englishQuestion": "Which sound is 'இ'?",
+      "optionsTamil": ["இ", "ஈ", "உ"],
+      "optionsEnglish": ["I (short)", "EE (long)", "U (short)"],
+      "correctIndex": 0
+    }
+  ],
+  "model": [
+    {
+      "id": "w1m1",
+      "tamilQuestion": "சரியான எழுத்தைத் தேர்வு செய்: __ லம்",
+      "englishQuestion": "Pick the missing vowel",
+      "optionsTamil": ["உ", "ஆ", "இ"],
+      "optionsEnglish": ["U", "AA", "I"],
+      "correctIndex": 2
+    },
+    {
+      "id": "w1m2",
+      "tamilQuestion": "சரியாக எழுதப்பட்ட சொல் எது?",
+      "englishQuestion": "Which spelling is correct?",
+      "optionsTamil": ["அம்மா", "அமா", "ஆம்மா"],
+      "optionsEnglish": ["amma (mother)", "ama", "aamma"],
+      "correctIndex": 0
+    },
+    {
+      "id": "w1m3",
+      "tamilQuestion": "“ஊ” எந்த உயிர்?",
+      "englishQuestion": "Which vowel is 'ஊ'?",
+      "optionsTamil": ["உ", "ஊ", "ஓ"],
+      "optionsEnglish": ["U", "OO (long)", "O"],
+      "correctIndex": 1
+    }
+  ]
+}
