@@ -1,5 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Basic Colors -->
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- Material3 Primary Colors -->
+    <color name="md_theme_primary">#1976D2</color>
+    <color name="md_theme_onPrimary">#FFFFFF</color>
+    <color name="md_theme_primaryVariant">#1565C0</color>
+
+    <!-- Material3 Secondary Colors -->
+    <color name="md_theme_secondary">#03DAC6</color>
+    <color name="md_theme_onSecondary">#000000</color>
+
+    <!-- Surface Colors -->
+    <color name="md_theme_surface">#FFFFFF</color>
+    <color name="md_theme_onSurface">#000000</color>
+
+    <!-- Background Colors -->
+    <color name="md_theme_background">#FFFFFF</color>
+    <color name="md_theme_onBackground">#000000</color>
+
+    <!-- Tamil App Specific Colors -->
+    <color name="tamil_accent">#FF9800</color>
+    <color name="subscription_highlight">#4CAF50</color>
+    <color name="locked_content">#9E9E9E</color>
 </resources>

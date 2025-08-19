@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <path
+        android:fillColor="@color/tamil_accent"
+        android:pathData="M12,2C13.1,2 14,2.9 14,4C14,5.1 13.1,6 12,6C10.9,6 10,5.1 10,4C10,2.9 10.9,2 12,2M21,9V7L15,7V9C15,10.1 15.9,11 17,11V18H20V20H4V18H7V11C8.1,11 9,10.1 9,9V7H3V9H5V19H19V9H21M12,12.5A1.5,1.5 0 0,0 10.5,14A1.5,1.5 0 0,0 12,15.5A1.5,1.5 0 0,0 13.5,14A1.5,1.5 0 0,0 12,12.5Z"/>
+
+</vector>

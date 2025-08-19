@@ -1,31 +1,69 @@
-<manifest package="com.example.eztamilreader"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <application
         android:allowBackup="true"
-        android:label="EzTamil Reader"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Material3.DayNight.NoActionBar">
+        android:theme="@style/Theme.EzTamilReader"
+        tools:targetApi="31">
 
-        <activity android:name=".ui.SettingsActivity" />
-        <activity android:name=".ui.SubscriptionActivity" />
-        <activity android:name=".ui.ResultActivity" />
-        <activity android:name=".ui.TestActivity" />
-        <activity android:name=".ui.WorksheetActivity" />
-        <activity android:name=".ui.HomeActivity" />
-        <activity android:name=".ui.OnboardingActivity" />
-
-        <!-- Launcher Activity -->
+        <!-- Splash Activity - Launch Activity -->
         <activity
             android:name=".ui.SplashActivity"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/Theme.EzTamilReader">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
+        <!-- Onboarding Activity -->
+        <activity
+            android:name=".ui.OnboardingActivity"
+            android:exported="false" />
+
+        <!-- Home Activity -->
+        <activity
+            android:name=".ui.HomeActivity"
+            android:exported="false" />
+
+        <!-- Worksheet Activity -->
+        <activity
+            android:name=".ui.WorksheetActivity"
+            android:exported="false" />
+
+        <!-- Test Activity -->
+        <activity
+            android:name=".ui.TestActivity"
+            android:exported="false" />
+
+        <!-- Result Activity -->
+        <activity
+            android:name=".ui.ResultActivity"
+            android:exported="false" />
+
+        <!-- Subscription Activity -->
+        <activity
+            android:name=".ui.SubscriptionActivity"
+            android:exported="false" />
+
+        <!-- Settings Activity -->
+        <activity
+            android:name=".ui.SettingsActivity"
+            android:exported="false" />
+
+        <!-- Main Activity (Backup) -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+
     </application>
+
 </manifest>

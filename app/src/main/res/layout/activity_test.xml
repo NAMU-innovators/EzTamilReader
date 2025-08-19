@@ -1,68 +1,383 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp">
-
-    <TextView
-        android:id="@+id/txtQuestion"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Question will appear here"
-        android:textSize="18sp"
-        android:paddingBottom="16dp" />
-
-    <!-- RadioGroup for Multiple Choice Answers -->
-    <RadioGroup
-        android:id="@+id/rgOptions"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:paddingBottom="16dp">
-
-        <!-- RadioButtons will be added here dynamically or statically if options are fixed -->
-        <!-- Example (remove these if adding dynamically): -->
-        <!--
-        <RadioButton
-            android:id="@+id/rbOption1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Option 1" />
-        <RadioButton
-            android:id="@+id/rbOption2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Option 2" />
-        -->
-    </RadioGroup>
-
-    <Button
-        android:id="@+id/btnSubmit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Submit Answer"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="16dp"/>
+    android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center">
+        android:orientation="vertical"
+        android:padding="16dp">
 
-        <Button
-            android:id="@+id/btnPrev"
-            android:layout_width="wrap_content"
+        <!-- Header Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Previous" />
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
 
-        <Button
-            android:id="@+id/btnNext"
-            android:layout_width="wrap_content"
+            <TextView
+                android:id="@+id/tv_progress"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="1 / 30"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/md_theme_primary" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Test Mode"
+                android:textSize="16sp"
+                android:textColor="@color/md_theme_onSurface"
+                android:background="@drawable/rounded_background"
+                android:padding="8dp" />
+
+        </LinearLayout>
+
+        <!-- Question Section -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Next"
-            android:layout_marginStart="16dp" />
+            android:layout_marginBottom="24dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/tv_question"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Question will appear here"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/md_theme_onSurface"
+                    android:layout_marginBottom="8dp" />
+
+                <TextView
+                    android:id="@+id/tv_question_eng"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="English translation will appear here"
+                    android:textSize="16sp"
+                    android:textColor="@color/md_theme_onSurface"
+                    android:alpha="0.7" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- MCQ Layout -->
+        <LinearLayout
+            android:id="@+id/layout_mcq"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Choose the correct answer:"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="12dp"
+                android:textColor="@color/md_theme_primary" />
+
+            <RadioGroup
+                android:id="@+id/rg_options"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/rb_option1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Option 1"
+                    android:textSize="18sp"
+                    android:padding="12dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/option_background" />
+
+                <RadioButton
+                    android:id="@+id/rb_option2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Option 2"
+                    android:textSize="18sp"
+                    android:padding="12dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/option_background" />
+
+                <RadioButton
+                    android:id="@+id/rb_option3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Option 3"
+                    android:textSize="18sp"
+                    android:padding="12dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/option_background" />
+
+                <RadioButton
+                    android:id="@+id/rb_option4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Option 4"
+                    android:textSize="18sp"
+                    android:padding="12dp"
+                    android:background="@drawable/option_background" />
+
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <!-- Pronunciation Layout -->
+        <LinearLayout
+            android:id="@+id/layout_pronunciation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pronunciation Exercise:"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="12dp"
+                android:textColor="@color/md_theme_primary" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="@color/tamil_accent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/tv_pronunciation_q"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Pronunciation question in Tamil"
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        android:gravity="center"
+                        android:layout_marginBottom="8dp" />
+
+                    <TextView
+                        android:id="@+id/tv_pronunciation_q_eng"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="English instruction"
+                        android:textSize="16sp"
+                        android:textColor="@color/white"
+                        android:gravity="center"
+                        android:alpha="0.9" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <Button
+                android:id="@+id/btn_play_audio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="🔊 Play Audio"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:background="@drawable/button_primary"
+                android:textColor="@color/white"
+                android:padding="16dp"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tap the button above to hear the pronunciation, then practice saying it aloud!"
+                android:textSize="14sp"
+                android:textColor="@color/md_theme_onSurface"
+                android:gravity="center"
+                android:alpha="0.7" />
+
+        </LinearLayout>
+
+        <!-- Reading Layout -->
+        <LinearLayout
+            android:id="@+id/layout_reading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Reading Exercise:"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="12dp"
+                android:textColor="@color/md_theme_primary" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="@color/md_theme_surface">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:id="@+id/tv_reading_instruction"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Read the following text aloud:"
+                        android:textSize="16sp"
+                        android:textColor="@color/md_theme_onSurface"
+                        android:layout_marginBottom="16dp" />
+
+                    <TextView
+                        android:id="@+id/tv_reading_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="தமிழ் உரை இங்கே தோன்றும்"
+                        android:textSize="28sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/md_theme_onSurface"
+                        android:gravity="center"
+                        android:padding="16dp"
+                        android:background="@drawable/reading_text_background" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <Button
+                android:id="@+id/btn_mark_read"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="✓ Mark as Read"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:background="@drawable/button_secondary"
+                android:textColor="@color/white"
+                android:padding="16dp" />
+
+        </LinearLayout>
+
+        <!-- Matching Layout -->
+        <LinearLayout
+            android:id="@+id/layout_matching"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Matching Exercise:"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="12dp"
+                android:textColor="@color/md_theme_primary" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/tv_match_instruction"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Type the English meaning:"
+                        android:textSize="16sp"
+                        android:textColor="@color/md_theme_onSurface"
+                        android:layout_marginBottom="16dp" />
+
+                    <TextView
+                        android:id="@+id/tv_tamil_word"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="தமிழ் சொல்"
+                        android:textSize="32sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/md_theme_primary"
+                        android:gravity="center"
+                        android:padding="20dp"
+                        android:background="@drawable/tamil_word_background"
+                        android:layout_marginBottom="20dp" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:boxStrokeColor="@color/md_theme_primary"
+                        app:hintTextColor="@color/md_theme_primary">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_english_match"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Enter English meaning"
+                            android:textSize="18sp"
+                            android:inputType="text"
+                            android:imeOptions="actionDone" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+        <!-- Submit Button -->
+        <Button
+            android:id="@+id/btn_submit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Submit Answer"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:background="@drawable/button_primary"
+            android:textColor="@color/white"
+            android:padding="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="16dp" />
+
     </LinearLayout>
 
-</LinearLayout>
+</ScrollView>

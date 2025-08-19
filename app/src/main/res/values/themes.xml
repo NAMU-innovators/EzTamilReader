@@ -1,8 +1,22 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
+    <!-- Base application theme for LIGHT mode -->
     <style name="Base.Theme.EzTamilReader" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <!-- Primary brand color -->
+        <item name="colorPrimary">#1976D2</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+        <item name="colorPrimaryVariant">#1565C0</item>
+
+        <!-- Secondary brand color -->
+        <item name="colorSecondary">#03DAC6</item>
+        <item name="colorOnSecondary">#000000</item>
+
+        <!-- Background colors -->
+        <item name="android:colorBackground">#FFFFFF</item>
+        <item name="colorSurface">#FFFFFF</item>
+        <item name="colorOnSurface">#000000</item>
+
+        <!-- Status bar color -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
     </style>
 
     <style name="Theme.EzTamilReader" parent="Base.Theme.EzTamilReader" />
